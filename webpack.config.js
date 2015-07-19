@@ -1,15 +1,18 @@
 var path = require('path');
 module.exports = {
-    entry: './src/es6/main.js',
+    entry: './src/app/app.js',
     output: {
         path: __dirname,
-        filename: 'bundle.js'
+        filename: 'app.js'
     },
     module: {
         loaders: [
-           /* { test: path.join(__dirname, 'src/es6'), loader: 'babel-loader' }*/
-            { test:/\.js$/, loader: 'babel-loader' }
+            /* { test: path.join(__dirname, 'src/es6'), loader: 'babel-loader' }*/
+            {test: /\.js$/, loader: 'babel-loader'}
 
         ]
+    },
+    externals: {
+        'angular': 'angular'
     }
 };
